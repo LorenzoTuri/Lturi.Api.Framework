@@ -1,5 +1,8 @@
 ﻿namespace LTuri.Api.Framework.Request
 {
+    /// <summary>
+    /// List filters, may be nested
+    /// </summary>
     public class RequestFilter
     {
         public enum Types { 
