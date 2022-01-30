@@ -18,8 +18,9 @@ namespace LTuri.Api.Framework
             _filter = new ApiControllerFilter<TEntity>();
         }
 
+        [NonAction]
         public Response<IEnumerable<TEntity>> ListRequest(
-            DbSet<TEntity> entities,
+            IEnumerable<TEntity> entities,
             IEnumerable<RequestFilter>? filters = null
         ) {
             return WrapException(() =>
@@ -31,6 +32,7 @@ namespace LTuri.Api.Framework
             });
         }
 
+        [NonAction]
         public Response<TEntity> GetRequest(
             DbSet<TEntity> entities,
             int id
@@ -52,6 +54,7 @@ namespace LTuri.Api.Framework
             });
         }
 
+        [NonAction]
         public Response<TEntity> PutRequest(
             int id,
             TEntity entity
@@ -71,6 +74,7 @@ namespace LTuri.Api.Framework
             });
         }
 
+        [NonAction]
         public Response<TEntity> PostRequest(
             DbSet<TEntity> entities,
             TEntity entity
@@ -88,6 +92,7 @@ namespace LTuri.Api.Framework
             });
         }
 
+        [NonAction]
         public Response<bool> DeleteRequest(
             DbSet<TEntity> entities,
             int id

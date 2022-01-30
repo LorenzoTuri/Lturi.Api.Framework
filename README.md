@@ -5,7 +5,8 @@
 3. Create the database context
 4. Foreach entity, create a controller, extending Lturi.Api.Framework.ApiController
 
-Example (in this case the entity is "Student" and it's related DbContext is EntityContext)
+For usages, check your swagger settings for the newly created routes.
+Example (in this case the entity is "Student" and it's related DbContext is "EntityContext")
 >
     [Route("api/[controller]")]
     [ApiController]
