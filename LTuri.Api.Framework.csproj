@@ -7,6 +7,7 @@
     <Authors>Lorenzo Turi</Authors>
     <Description>Collection of utilities for Api's</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
