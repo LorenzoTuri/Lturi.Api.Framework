@@ -5,7 +5,23 @@
 3. Create the database context
 4. Foreach entity, create a controller, extending Lturi.Api.Framework.ApiController
 
-For usages, check your swagger settings for the newly created routes.
+For usages, check your swagger for the newly created routes. 
+Also to include more documentation, place the last below 2 lines in the AddSwaggerGen method body, for example like
+>
+    builder.Services.AddSwaggerGen(options =>
+    {
+        options.EnableAnnotations();
+
+        options.SwaggerDoc("v1", new OpenApiInfo
+        {
+            Version = "v1",
+            Title = "ToDo API",
+        });
+
+        List<string> xmlFiles = Directory.GetFiles(AppContext.BaseDirectory, "*.xml", SearchOption.TopDirectoryOnly).ToList();
+        xmlFiles.ForEach(xmlFile => options.IncludeXmlComments(xmlFile));
+    });
+This includes all the xml generated with the documentation in swagger, in each compiled project
 Example (in this case the entity is "Student" and it's related DbContext is "EntityContext")
 >
     [Route("api/[controller]")]
